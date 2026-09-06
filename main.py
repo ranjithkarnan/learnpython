@@ -1176,3 +1176,124 @@
 #     print("Ready of Release")
 # else:
 #     print("not for release")
+
+
+# Scenario 1 — QA Test Execution Report
+
+# test_results = [
+#     {"name": "Login", "status": "Passed", "priority": "High"},
+#     {"name": "Payment", "status": "Failed", "priority": "Critical"},
+#     {"name": "Profile", "status": "Passed", "priority": "Medium"},
+#     {"name": "Checkout", "status": "Failed", "priority": "High"},
+#     {"name": "Logout", "status": "Passed", "priority": "Low"},
+#     {"name": "Search", "status": "Failed", "priority": "Critical"}
+# ]
+
+# passed_test = 0
+# failed_test = 0
+# critical_fail = 0
+# for test_result in test_results:
+#     if test_result["status"] == "Failed" :
+#         print(f"{test_result['name']} - Build Blocked")
+#         failed_test= failed_test + 1
+#     else:
+#         print(f"{test_result['name']} - Build Can Procced")
+#         passed_test=passed_test + 1
+
+
+#     if test_result["priority"] == "Critical" and test_result["status"] == "Failed":
+#         critical_fail = critical_fail + 1
+
+
+
+
+
+# print(f"Total Tests : {len(test_results)}")
+# print(f"Failed Tests : {failed_test}")
+# print(f"Passed Tests : {passed_test}")
+# print(f"critical fails : {critical_fail}")
+
+# if critical_fail > 0 :
+#        print("Build Status: BLOCKED")
+# else:
+#         print("Build Status: CAN PROCEED")
+
+
+
+# Scenario #2 — API Performance Monitoring
+
+
+# api_results = [
+#     {"api": "Login API", "status": "Passed", "response_time": 350},
+#     {"api": "Payment API", "status": "Passed", "response_time": 920},
+#     {"api": "Profile API", "status": "Failed", "response_time": 480},
+#     {"api": "Order API", "status": "Passed", "response_time": 650},
+#     {"api": "Search API", "status": "Failed", "response_time": 1200},
+#     {"api": "Logout API", "status": "Passed", "response_time": 290}
+# ]
+
+# good_apis = 0
+# api_needs_attention = 0
+
+# for api_result in api_results:
+#     if api_result["status"] == "Failed" or api_result["response_time"] > 500:
+#         print(f"{api_result['api']} - Needs Attendtion")
+#         api_needs_attention = api_needs_attention + 1
+#     else:
+
+#         print(f"{api_result['api']} - Good Api")
+#         good_apis = good_apis + 1
+
+
+# print(f"Total APIs : {len(api_results)}")
+# print(f"Good APIs : {good_apis}")
+# print(f"APIs Needing Attention : {api_needs_attention}")
+
+# if api_needs_attention > 2 : 
+#     print(f"Overall Status: INVESTIGATION REQUIRED")
+# else:
+#     print("Overall Status: ACCEPTABLE")
+
+
+deployment_tests = [
+    {"name": "Login", "status": "Passed", "critical_bug": False, "environment_ready": True},
+    {"name": "Payment", "status": "Passed", "critical_bug": True, "environment_ready": True},
+    {"name": "Profile", "status": "Failed", "critical_bug": False, "environment_ready": True},
+    {"name": "Orders", "status": "Passed", "critical_bug": False, "environment_ready": False},
+    {"name": "Search", "status": "Passed", "critical_bug": False, "environment_ready": True},
+    {"name": "Logout", "status": "Passed", "critical_bug": False, "environment_ready": True}
+]
+
+ready_test=0
+not_ready = 0
+critical_bug_test = 0
+environment_not_ready = 0
+failed_test = 0 
+
+for deployement_test in deployment_tests:
+    if deployement_test["status"] == "Passed" and not deployement_test["critical_bug"] and deployement_test["environment_ready"] :
+        print(f"{deployement_test['name']} - is Ready")
+        ready_test= ready_test + 1
+    else: 
+        print(f"{deployement_test['name']} - is not Ready")
+        not_ready = not_ready + 1
+
+    if deployement_test["critical_bug"] == True :
+        critical_bug_test = critical_bug_test + 1
+
+    if not deployement_test["environment_ready"] : 
+        environment_not_ready = environment_not_ready + 1
+
+    if deployement_test["status"] == "Failed" :
+        failed_test = failed_test + 1
+
+print(f"Total Tests : {len(deployment_tests)}")
+print(f"Ready : {ready_test}")
+print(f"not ready : {not_ready}")
+print(f"Critical bugs : {critical_bug_test}")
+print(f"environment_not_ready : { environment_not_ready}")
+
+if critical_bug_test > 0 or environment_not_ready > 0 or failed_test > 0 :
+    print(f"Deployment Blocked")
+else : 
+    print(f"DEPLOYMENT APPROVED")
