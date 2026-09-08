@@ -1255,45 +1255,49 @@
 #     print("Overall Status: ACCEPTABLE")
 
 
-deployment_tests = [
-    {"name": "Login", "status": "Passed", "critical_bug": False, "environment_ready": True},
-    {"name": "Payment", "status": "Passed", "critical_bug": True, "environment_ready": True},
-    {"name": "Profile", "status": "Failed", "critical_bug": False, "environment_ready": True},
-    {"name": "Orders", "status": "Passed", "critical_bug": False, "environment_ready": False},
-    {"name": "Search", "status": "Passed", "critical_bug": False, "environment_ready": True},
-    {"name": "Logout", "status": "Passed", "critical_bug": False, "environment_ready": True}
-]
+# deployment_tests = [
+#     {"name": "Login", "status": "Passed", "critical_bug": False, "environment_ready": True},
+#     {"name": "Payment", "status": "Passed", "critical_bug": True, "environment_ready": True},
+#     {"name": "Profile", "status": "Failed", "critical_bug": False, "environment_ready": True},
+#     {"name": "Orders", "status": "Passed", "critical_bug": False, "environment_ready": False},
+#     {"name": "Search", "status": "Passed", "critical_bug": False, "environment_ready": True},
+#     {"name": "Logout", "status": "Passed", "critical_bug": False, "environment_ready": True}
+# ]
 
-ready_test=0
-not_ready = 0
-critical_bug_test = 0
-environment_not_ready = 0
-failed_test = 0 
+# ready_test=0
+# not_ready = 0
+# critical_bug_test = 0
+# environment_not_ready = 0
+# failed_test = 0 
 
-for deployement_test in deployment_tests:
-    if deployement_test["status"] == "Passed" and not deployement_test["critical_bug"] and deployement_test["environment_ready"] :
-        print(f"{deployement_test['name']} - is Ready")
-        ready_test= ready_test + 1
-    else: 
-        print(f"{deployement_test['name']} - is not Ready")
-        not_ready = not_ready + 1
+# for deployement_test in deployment_tests:
+#     if deployement_test["status"] == "Passed" and not deployement_test["critical_bug"] and deployement_test["environment_ready"] :
+#         print(f"{deployement_test['name']} - is Ready")
+#         ready_test= ready_test + 1
+#     else: 
+#         print(f"{deployement_test['name']} - is not Ready")
+#         not_ready = not_ready + 1
 
-    if deployement_test["critical_bug"] == True :
-        critical_bug_test = critical_bug_test + 1
+#     if deployement_test["critical_bug"] == True :
+#         critical_bug_test = critical_bug_test + 1
 
-    if not deployement_test["environment_ready"] : 
-        environment_not_ready = environment_not_ready + 1
+#     if not deployement_test["environment_ready"] : 
+#         environment_not_ready = environment_not_ready + 1
 
-    if deployement_test["status"] == "Failed" :
-        failed_test = failed_test + 1
+#     if deployement_test["status"] == "Failed" :
+#         failed_test = failed_test + 1
 
-print(f"Total Tests : {len(deployment_tests)}")
-print(f"Ready : {ready_test}")
-print(f"not ready : {not_ready}")
-print(f"Critical bugs : {critical_bug_test}")
-print(f"environment_not_ready : { environment_not_ready}")
+# print(f"Total Tests : {len(deployment_tests)}")
+# print(f"Ready : {ready_test}")
+# print(f"not ready : {not_ready}")
+# print(f"Critical bugs : {critical_bug_test}")
+# print(f"environment_not_ready : { environment_not_ready}")
 
-if critical_bug_test > 0 or environment_not_ready > 0 or failed_test > 0 :
-    print(f"Deployment Blocked")
-else : 
-    print(f"DEPLOYMENT APPROVED")
+# if critical_bug_test > 0 or environment_not_ready > 0 or failed_test > 0 :
+#     print(f"Deployment Blocked")
+# else : 
+#     print(f"DEPLOYMENT APPROVED")
+
+
+
+# Day 4 starts with Python Functions.
