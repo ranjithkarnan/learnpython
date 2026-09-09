@@ -1293,7 +1293,107 @@
 # print(f"Critical bugs : {critical_bug_test}")
 # print(f"environment_not_ready : { environment_not_ready}")
 
-if critical_bug_test > 0 or environment_not_ready > 0 or failed_test > 0 :
-    print(f"Deployment Blocked")
-else : 
-    print(f"DEPLOYMENT APPROVED")
+# if critical_bug_test > 0 or environment_not_ready > 0 or failed_test > 0 :
+#     print(f"Deployment Blocked")
+# else : 
+#     print(f"DEPLOYMENT APPROVED")
+
+# Question 1 — Login Attempts
+
+# failed_attempts = int(input("Enter failed login attempts: "))
+
+# if failed_attempts == 0:
+#     print("Login Safe")
+# elif failed_attempts <= 2:
+#     print("Warning")
+# else:
+#     print("Account Locked")
+
+    
+
+# Q2 — and / or / not
+
+# test_passed = True
+# critical_bug = False
+# server_available = True
+
+# if test_passed and not critical_bug and server_available:
+#     print("Can Procceed")
+
+# else:
+#     print("Deployment Blocked")
+
+
+# Q3 — Loop + Counter
+
+# test_statuses = [
+#     "Passed",
+#     "Failed",
+#     "Passed",
+#     "Failed",
+#     "Failed",
+#     "Passed",
+#     "Passed"
+# ]
+
+# passed_test = 0
+# failed_test = 0
+
+# for test_status in test_statuses:
+#     if test_status == "Passed": 
+#         passed_test = passed_test + 1
+#     else:
+#         failed_test = failed_test + 1
+
+# print(f"Total tests : {len(test_statuses)}")
+# print(f"Passed_test: {passed_test}")
+# print(f"Failed_test : {failed_test}")
+
+
+# # Q4 — List of Dictionaries + Conditions
+
+# api_tests = [
+#     {"name": "Login API", "status": "Passed", "response_time": 300},
+#     {"name": "Payment API", "status": "Failed", "response_time": 800},
+#     {"name": "Profile API", "status": "Passed", "response_time": 700},
+#     {"name": "Order API", "status": "Passed", "response_time": 450},
+#     {"name": "Search API", "status": "Failed", "response_time": 400}
+# ]
+
+# success_api = 0
+# failure_api = 0
+
+# for api_test in api_tests:
+#     if api_test["status"] == "Passed" and api_test["response_time"] <= 500:
+#         print(f" {api_test['name']} -API is Successful ")
+#         success_api = success_api + 1
+#     else:
+#         print(f" {api_test['name']} - API is Unsuccessful")
+#         failure_api = failure_api + 1
+
+# print(f"total Apis : {len(api_tests)}")
+# print(f"Successful APIs : {success_api}")
+# print(f"Unsuccessful APIs : {failure_api}")
+
+# Q5 — Final Challenge
+
+
+# test_results = [
+#     {"name": "Login", "status": "Passed", "severity": "None"},
+#     {"name": "Payment", "status": "Failed", "severity": "Critical"},
+#     {"name": "Profile", "status": "Passed", "severity": "None"},
+#     {"name": "Checkout", "status": "Failed", "severity": "Major"},
+#     {"name": "Search", "status": "Failed", "severity": "Critical"},
+#     {"name": "Logout", "status": "Passed", "severity": "None"}
+# ]
+
+
+# for test_result in test_results:
+#     if test_result["status"] == "Failed" and test_result["severity"] == "critical" : 
+#         print("Release BLOCKED")
+    
+
+
+
+# print(f"Total Tests : {len(test_results)}")
+
